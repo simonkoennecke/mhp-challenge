@@ -9,6 +9,9 @@ und `PushNotificationHandler#sendNotification` mit dem gleichen Parameter aufger
 
 ### Akzeptanzkritieren: 
  - Nach dem eine Inquiry erstellt wird, muss `EmailHandler#sendEmail(Inquiry)` und `PushNotificationHandler#sendNotification` ausgeführt werden.
+   * `InquiryServiceInterface` Interface eingeführt. Das Interfacce erwartet die Funtkion `void send(Inquiry inquiry);`.
+   * Das Interface  wurde bei EmailHandler und PushNotificationHandler angewendet und die `send` Funktion mit den Service send Funktion verknüpft.
+   * InquiryService bekommt alle `InquiryServiceInterface` per Dependency Inject und verteilt die Anfrage an alle vorhanden Services.
  - Der `InquiryTest` muss erfolgreich sein
  
 ### Rahmenbedingungen:
